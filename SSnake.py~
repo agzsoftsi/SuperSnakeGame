@@ -26,6 +26,5 @@ w.tracer(0)
 s_head = turtle.Turtle()
 s_head.speed(50)
 s_head.shape("circle")
-s_head.penup()
 
 
