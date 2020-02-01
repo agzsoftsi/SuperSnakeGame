@@ -25,6 +25,7 @@ score_count = 0
 w = turtle.Screen()
 w.title("SuperSnake  @karlgarmor")
 w.bgcolor("black")
+w.bgpic("f2.gif")
 w.setup(width=500, height=500)
 #w.exitonclick()
 w.tracer(0)
@@ -132,7 +133,7 @@ while True:
         # new segment of the Snake
         n_head = turtle.Turtle()
         n_head.speed(50)
-        n_head.shape(os.path.expanduser("body.gif"))
+        n_head.shape("body.gif")
         n_head.color("lightgreen")
         n_head.penup()
         new_seg.append(n_head)

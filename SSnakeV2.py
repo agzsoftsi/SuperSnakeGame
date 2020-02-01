@@ -25,6 +25,7 @@ score_count = 0
 w = turtle.Screen()
 w.title("SuperSnake  @karlgarmor")
 w.bgcolor("black")
+w.bgpic("fondo.gif")
 w.setup(width=500, height=500)
 #w.exitonclick()
 w.tracer(0)
