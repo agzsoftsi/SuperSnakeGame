@@ -18,6 +18,7 @@ import time
 import random
 
 w_wait = 0.1
+score_count = 0
 
 # Basic Configuration properties of the window
 w = turtle.Screen()
@@ -48,6 +49,17 @@ s_food.direction = "stop"
 # new Segment
 
 new_seg = []
+
+# Text to Score
+score_text = turtle.Turtle()
+score_text.speed(0)
+score_text.color("white")
+score_text.penup()
+score_text.hideturtle()
+score_text.goto(0,220)
+
+score.text.clear()
+score_text.write("Score: {}".format(score_count), align = "center", font = ("courrier", 18, "normal"))
 
 # Actions
 def keyup():
@@ -95,8 +107,8 @@ while True:
         s_head.goto(0,0)
         s_head.direction = "stop" 
   
-    	#hidde segments
-    	for seg in new_seg:
+        #hidde segments
+        for seg in new_seg:
             seg.goto(1000,1000)
             seg.hideturtle()
 
@@ -115,6 +127,11 @@ while True:
         n_head.color("green")
         n_head.penup()
         new_seg.append(n_head)
+
+        #increment score
+        score_count += 1
+        score_text.write("Score: {}".format(score_count), align = "center", font = ("courrier", 18,  "normal"))
+        
 
      #move n_head
     count_seg = len(new_seg)
