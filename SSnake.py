@@ -90,11 +90,18 @@ while True:
     w.update()
 
     #Collitions
-    if s_head.xcor() > 240 or s_head.xcor() < -240 or s_head.ycor() > 240 or s_head.ycor() < -240:
+    if s_head.xcor() > 238 or s_head.xcor() < -240 or s_head.ycor() > 240 or s_head.ycor() < -238:
         time.sleep(1)
         s_head.goto(0,0)
         s_head.direction = "stop" 
   
+        #hidde segments
+        for seg in new_seg:
+            seg.goto(1000,1000)
+            seg.hideturtle()
+
+	#clear segment
+        new_seg.clear()
 
     if s_head.distance(s_food) < 20:
         x = random.randint(-240,240)
