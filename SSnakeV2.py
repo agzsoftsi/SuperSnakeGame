@@ -138,7 +138,7 @@ while True:
 
     if s_head.distance(s_food) < 20:
         x = random.randint(-235,235)
-        y = random.randint(-235,220)
+        y = random.randint(-235,180)
         s_food.goto(x,y)
 
         # new segment of the Snake
