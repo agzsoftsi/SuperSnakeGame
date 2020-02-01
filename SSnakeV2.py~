@@ -89,7 +89,7 @@ def movement():
         s_head.setx(x - 15)
 
     if s_head.direction == "right":
-        s_head.settiltangle(0)
+        s_head.settiltangle(180)
         x = s_head.xcor()
         s_head.setx(x + 15)
 
