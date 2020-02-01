@@ -65,19 +65,19 @@ def keyright():
 def movement():
     if s_head.direction == "up":
         y = s_head.ycor()
-        s_head.sety(y + 10)
+        s_head.sety(y + 20)
 
     if s_head.direction == "down":
         y = s_head.ycor()
-        s_head.sety(y - 10)
+        s_head.sety(y - 20)
 
     if s_head.direction == "left":
         x = s_head.xcor()
-        s_head.setx(x - 10)
+        s_head.setx(x - 20)
 
     if s_head.direction == "right":
         x = s_head.xcor()
-        s_head.setx(x + 10)
+        s_head.setx(x + 20)
 
 # Configure keyboard
 w.listen()
@@ -103,16 +103,16 @@ while True:
         new_seg.append(n_head)
 
      #move n_head
-     count_seg = len(new_seg)
-     for index in range(count_seg -1, 0, -1):
-         x = new_seg[index - 1].xcor()
-         y = new_seg[index - 1].ycor()
-         new_seg[index].goto(x,y)
+    count_seg = len(new_seg)
+    for index in range(count_seg -1, 0, -1):
+        x = new_seg[index - 1].xcor()
+        y = new_seg[index - 1].ycor()
+        new_seg[index].goto(x,y)
 
-     if count_seg > 0:
-         x = s_head.xcor()
-         y = s_head.ycor()
-         new_seg[0].goto(x,y)
+    if count_seg > 0:
+        x = s_head.xcor()
+        y = s_head.ycor()
+        new_seg[0].goto(x,y)
 
 
         

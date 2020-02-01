@@ -65,19 +65,19 @@ def keyright():
 def movement():
     if s_head.direction == "up":
         y = s_head.ycor()
-        s_head.sety(y + 10)
+        s_head.sety(y + 15)
 
     if s_head.direction == "down":
         y = s_head.ycor()
-        s_head.sety(y - 10)
+        s_head.sety(y - 15)
 
     if s_head.direction == "left":
         x = s_head.xcor()
-        s_head.setx(x - 10)
+        s_head.setx(x - 15)
 
     if s_head.direction == "right":
         x = s_head.xcor()
-        s_head.setx(x + 10)
+        s_head.setx(x + 15)
 
 # Configure keyboard
 w.listen()
