@@ -17,6 +17,7 @@ import time
 """ The time module provides manage of the time """
 import random
 
+
 w_wait = 0.1
 score_count = 0
 
@@ -29,6 +30,7 @@ w.setup(width=500, height=500)
 w.tracer(0)
 
 # Create the Snake
+
 s_head = turtle.Turtle()
 s_head.speed(50)
 s_head.shape("turtle")
@@ -130,7 +132,7 @@ while True:
         # new segment of the Snake
         n_head = turtle.Turtle()
         n_head.speed(50)
-        n_head.shape("square")
+        n_head.shape("body.gif")
         n_head.color("lightgreen")
         n_head.penup()
         new_seg.append(n_head)
