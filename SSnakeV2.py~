@@ -31,13 +31,14 @@ w.setup(width=500, height=500)
 w.tracer(0)
 w.addshape("~/SuperSnakeGame/head.gif")
 w.addshape("~/SuperSnakeGame/body.gif")
+w.addshape("~/SuperSnakeGame/raton.gif")
 
 
 # Create the Snake
 
 s_head = turtle.Turtle()
 s_head.speed(50)
-s_head.shape("~/SuperSnakeGame/head.gif")
+s_head.shape("~/SuperSnakeGame/head.gif", ((5,-3), (0,5), (-5,-3)))
 #s_head.color("green")
 s_head.penup()
 s_head.goto(0,0)
@@ -46,7 +47,7 @@ s_head.direction = "stop"
 # Create the food
 s_food = turtle.Turtle()
 s_food.speed(50)
-s_food.shape("circle")
+s_food.shape("~/SuperSnakeGame/raton.gif")
 s_food.color("red")
 s_food.penup()
 s_food.goto(100,100)

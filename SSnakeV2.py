@@ -30,7 +30,11 @@ w.setup(width=500, height=500)
 #w.exitonclick()
 w.tracer(0)
 w.addshape("~/SuperSnakeGame/head.gif")
+w.addshape("~/SuperSnakeGame/head2.gif")
+w.addshape("~/SuperSnakeGame/head3.gif")
+w.addshape("~/SuperSnakeGame/head4.gif")
 w.addshape("~/SuperSnakeGame/body.gif")
+w.addshape("~/SuperSnakeGame/raton.gif")
 
 
 # Create the Snake
@@ -38,7 +42,7 @@ w.addshape("~/SuperSnakeGame/body.gif")
 s_head = turtle.Turtle()
 s_head.speed(50)
 s_head.shape("~/SuperSnakeGame/head.gif")
-s_head.color("green")
+#s_head.color("green")
 s_head.penup()
 s_head.goto(0,0)
 s_head.direction = "stop"
@@ -46,7 +50,7 @@ s_head.direction = "stop"
 # Create the food
 s_food = turtle.Turtle()
 s_food.speed(50)
-s_food.shape("circle")
+s_food.shape("~/SuperSnakeGame/raton.gif")
 s_food.color("red")
 s_food.penup()
 s_food.goto(100,100)
@@ -80,21 +84,25 @@ def keyright():
 
 def movement():
     if s_head.direction == "up":
+        s_head.shape("~/SuperSnakeGame/head4.gif")
         s_head.settiltangle(90)
         y = s_head.ycor()
         s_head.sety(y + 15)
 
     if s_head.direction == "down":
+        s_head.shape("~/SuperSnakeGame/head3.gif")
         s_head.settiltangle(-90)
         y = s_head.ycor()
         s_head.sety(y - 15)
 
     if s_head.direction == "left":
+        s_head.shape("~/SuperSnakeGame/head2.gif")
         s_head.settiltangle(-180)
         x = s_head.xcor()
         s_head.setx(x - 15)
 
     if s_head.direction == "right":
+        s_head.shape("~/SuperSnakeGame/head.gif")
         s_head.settiltangle(0)
         x = s_head.xcor()
         s_head.setx(x + 15)
