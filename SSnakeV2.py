@@ -16,7 +16,7 @@ import turtle
 import time
 """ The time module provides manage of the time """
 import random
-
+import os
 
 w_wait = 0.1
 score_count = 0
@@ -29,12 +29,15 @@ w.bgpic("fondo.gif")
 w.setup(width=500, height=500)
 #w.exitonclick()
 w.tracer(0)
+w.addshape("~/SuperSnakeGame/head.gif")
+w.addshape("~/SuperSnakeGame/body.gif")
+
 
 # Create the Snake
 
 s_head = turtle.Turtle()
 s_head.speed(50)
-s_head.shape("turtle")
+s_head.shape("~/SuperSnakeGame/head.gif")
 s_head.color("green")
 s_head.penup()
 s_head.goto(0,0)
@@ -59,7 +62,7 @@ score_text.speed(0)
 score_text.color("white")
 score_text.penup()
 score_text.hideturtle()
-score_text.goto(0,220)
+score_text.goto(0,195)
 score_text.write("Score: 0", align = "center", font = ("courrier", 18, "normal"))
 
 # Actions
@@ -133,7 +136,7 @@ while True:
         # new segment of the Snake
         n_head = turtle.Turtle()
         n_head.speed(50)
-        n_head.shape("body.gif")
+        n_head.shape("~/SuperSnakeGame/body.gif")
         n_head.color("lightgreen")
         n_head.penup()
         new_seg.append(n_head)
