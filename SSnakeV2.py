@@ -118,7 +118,7 @@ while True:
     w.update()
 
     #Collitions
-    if s_head.xcor() > 238 or s_head.xcor() < -240 or s_head.ycor() > 240 or s_head.ycor() < -238:
+    if s_head.xcor() > 232 or s_head.xcor() < -235 or s_head.ycor() > 150 or s_head.ycor() < -232:
         time.sleep(1)
         s_head.goto(0,0)
         s_head.direction = "stop"
@@ -137,8 +137,8 @@ while True:
         new_seg.clear()
 
     if s_head.distance(s_food) < 20:
-        x = random.randint(-240,240)
-        y = random.randint(-240,240)
+        x = random.randint(-235,235)
+        y = random.randint(-235,220)
         s_food.goto(x,y)
 
         # new segment of the Snake

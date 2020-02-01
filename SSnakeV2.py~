@@ -30,6 +30,9 @@ w.setup(width=500, height=500)
 #w.exitonclick()
 w.tracer(0)
 w.addshape("~/SuperSnakeGame/head.gif")
+w.addshape("~/SuperSnakeGame/head2.gif")
+w.addshape("~/SuperSnakeGame/head3.gif")
+w.addshape("~/SuperSnakeGame/head4.gif")
 w.addshape("~/SuperSnakeGame/body.gif")
 w.addshape("~/SuperSnakeGame/raton.gif")
 
@@ -38,7 +41,7 @@ w.addshape("~/SuperSnakeGame/raton.gif")
 
 s_head = turtle.Turtle()
 s_head.speed(50)
-s_head.shape("~/SuperSnakeGame/head.gif", ((5,-3), (0,5), (-5,-3)))
+s_head.shape("~/SuperSnakeGame/head.gif")
 #s_head.color("green")
 s_head.penup()
 s_head.goto(0,0)
@@ -81,21 +84,25 @@ def keyright():
 
 def movement():
     if s_head.direction == "up":
+        s_head.shape("~/SuperSnakeGame/head4.gif")
         s_head.settiltangle(90)
         y = s_head.ycor()
         s_head.sety(y + 15)
 
     if s_head.direction == "down":
+        s_head.shape("~/SuperSnakeGame/head3.gif")
         s_head.settiltangle(-90)
         y = s_head.ycor()
         s_head.sety(y - 15)
 
     if s_head.direction == "left":
+        s_head.shape("~/SuperSnakeGame/head2.gif")
         s_head.settiltangle(-180)
         x = s_head.xcor()
         s_head.setx(x - 15)
 
     if s_head.direction == "right":
+        s_head.shape("~/SuperSnakeGame/head.gif")
         s_head.settiltangle(0)
         x = s_head.xcor()
         s_head.setx(x + 15)
@@ -111,7 +118,7 @@ while True:
     w.update()
 
     #Collitions
-    if s_head.xcor() > 238 or s_head.xcor() < -240 or s_head.ycor() > 240 or s_head.ycor() < -238:
+    if s_head.xcor() > 232 or s_head.xcor() < -235 or s_head.ycor() > 150 or s_head.ycor() < -232:
         time.sleep(1)
         s_head.goto(0,0)
         s_head.direction = "stop"
@@ -130,8 +137,8 @@ while True:
         new_seg.clear()
 
     if s_head.distance(s_food) < 20:
-        x = random.randint(-240,240)
-        y = random.randint(-240,240)
+        x = random.randint(-235,235)
+        y = random.randint(-235,220)
         s_food.goto(x,y)
 
         # new segment of the Snake
