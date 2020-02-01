@@ -89,6 +89,13 @@ w.onkeypress(keyright, "Right")
 while True:
     w.update()
 
+    #Collitions
+    if s_head.xcor() > 240 or s_head.xcor() < -240 or s_head.ycor() > 240 or s_head.ycor() < -240:
+        time.sleep(1)
+        s_head.goto(0,0)
+        s_head.direction = "stop" 
+  
+
     if s_head.distance(s_food) < 20:
         x = random.randint(-240,240)
         y = random.randint(-240,240)
