@@ -57,9 +57,7 @@ score_text.color("white")
 score_text.penup()
 score_text.hideturtle()
 score_text.goto(0,220)
-
-score.text.clear()
-score_text.write("Score: {}".format(score_count), align = "center", font = ("courrier", 18, "normal"))
+score_text.write("Score: 0", align = "center", font = ("courrier", 18, "normal"))
 
 # Actions
 def keyup():
@@ -105,8 +103,13 @@ while True:
     if s_head.xcor() > 238 or s_head.xcor() < -240 or s_head.ycor() > 240 or s_head.ycor() < -238:
         time.sleep(1)
         s_head.goto(0,0)
-        s_head.direction = "stop" 
-  
+        s_head.direction = "stop"
+        
+        #Reset score
+        score_count = 0 
+        score_text.clear()
+        score_text.write("Score: {}".format(score_count), align = "center", font = ("courrier", 18,  "normal"))  
+        
         #hidde segments
         for seg in new_seg:
             seg.goto(1000,1000)
@@ -124,12 +127,13 @@ while True:
         n_head = turtle.Turtle()
         n_head.speed(50)
         n_head.shape("square")
-        n_head.color("green")
+        n_head.color("lightgreen")
         n_head.penup()
         new_seg.append(n_head)
 
         #increment score
         score_count += 1
+        score_text.clear()
         score_text.write("Score: {}".format(score_count), align = "center", font = ("courrier", 18,  "normal"))
         
 
@@ -148,4 +152,18 @@ while True:
 
         
     movement()
+
+    #collitions with the snake body
+    for seg in new_seg:
+        if seg.distance(s_head) < 20:
+            time.sleep(1)
+            s_head.goto(0,0)
+            s_head.direction = "stop"
+
+            #hidde segments of body
+            for seg in new_seg:
+                seg.goto(1000,1000)
+
+            new_seg.clear()
+ 
     time.sleep(w_wait)
